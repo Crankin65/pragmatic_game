@@ -1,3 +1,13 @@
-name1 = "larry"
-health1 = 60
-puts "#{name1}'s health is #{health1}"
+require_relative 'player'
+require_relative 'game'
+
+
+player1 = Player.new("moe")
+player2 = Player.new("larry", 60)
+player3 = Player.new("Curly", 125)
+
+knuckleheads = Game.new("Knuckleheads")
+knuckleheads.add_player(player1)
+knuckleheads.add_player(player2)
+knuckleheads.add_player(player3)
+knuckleheads.play
