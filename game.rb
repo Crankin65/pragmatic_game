@@ -28,13 +28,25 @@ class Game
     end
       
 
+
     1.upto(rounds) do |round|
+      if block_given?
+        break if yield
+      end
       puts "\nRound #{round}:"
       @players.each do |player|
         GameTurn.take_turn(player)
         #puts player
       end 
     end
+
+    # 1.upto(rounds) do |round|
+    #   puts "\nRound #{round}:"
+    #   @players.each do |player|
+    #     GameTurn.take_turn(player)
+    #     #puts player
+    #   end 
+    # end
   end
 
   def print_name_and_health(player)
